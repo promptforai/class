@@ -30,12 +30,12 @@
 
   - name: creating route53 
     amazon.aws.route53:
-    state: present
-    zone: devgani.online
-    record: "{{ item.item }}.devgani.online"
-    type: A
-    ttl: 1
-    value: "{{ item.instances[0].private_ip_address}}"
+      state: present
+      zone: devgani.online
+      record: "{{ item.item }}.devgani.online"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address}}"
     loop: "{{ instance_info.results }}"
    
 
