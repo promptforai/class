@@ -1,6 +1,7 @@
 - name: creating ec2_instance
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: create mysql sever
     amazon.aws.ec2_instance:
