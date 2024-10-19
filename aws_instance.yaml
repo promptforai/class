@@ -7,10 +7,10 @@
     ansible.builtin.pip:
       name: "{{ item }}"
       executable: pip3.9
-      loop:
-      - boto3
-      - botocore
-      
+    loop:
+    - boto3
+    - botocore
+
   - name: create mysql sever
     amazon.aws.ec2_instance:
       name: mysql
