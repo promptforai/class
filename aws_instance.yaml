@@ -4,22 +4,24 @@
   tasks:
   - name: installing boto3 and botocore
     ansible.builtin.pip:
-      name: 
-      - boto3
-      - botocore
+      name: "{{ item }}"
       executable: pip3.9
-    # loop:
-    # - boto3
-    # - botocore
+    loop:
+    - boto3
+    - botocore
 
   - name: create mysql sever
     amazon.aws.ec2_instance:
-      name: mysql1
+      name: "{{ item }}"
       instance_type: "t2.micro"
       image_id: "ami-09c813fb71547fc4f"
       vpc_subnet_id: "subnet-0e541222b36806bcc"
       security_group: "sg-077917637fc069d1f"
       region: "us-east-1"
+    loop:
+    - mysql
+    - backend
+    - frontend
 
 
   
