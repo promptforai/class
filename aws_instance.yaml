@@ -22,6 +22,11 @@
     - mysql
     - backend
     - frontend
+    register: instance_info
+
+  - name: print instance instance_info
+    ansible.builtin.debug:
+      msg: " {{ instance_info }}"
 
 
   
