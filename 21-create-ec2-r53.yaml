@@ -1,8 +1,8 @@
 - name: creating ec2 and r53 
   hosts: local
   connection: local
-    vars_files:
-  - vars.yaml
+  #   vars_files:
+  # - vars.yaml
   tasks:
   - name: installing python dependencies
     ansible.builtin.pip:
