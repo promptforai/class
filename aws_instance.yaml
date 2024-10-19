@@ -10,8 +10,13 @@
       vpc_subnet_id: "subnet-0e541222b36806bcc"
       security_group: "sg-077917637fc069d1f"
       region: "us-east-1"
-    
-
+  - name: installing boto3 and botocore
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+      loop:
+      - boto3
+      - botocore
 
 
 
