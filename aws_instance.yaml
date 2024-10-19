@@ -1,7 +1,6 @@
 - name: creating ec2_instance
   hosts: local
   connection: local
-  become: yes
   tasks:
   - name: installing boto3 and botocore
     ansible.builtin.pip:
